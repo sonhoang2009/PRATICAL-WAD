@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Exam.Models.Test>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Classroom.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamSubject.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Falculty.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Starttime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamDur)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classroom.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamSubject.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Falculty.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.StatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Starttime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamDur)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
